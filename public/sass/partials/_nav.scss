@@ -1,0 +1,52 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background: white;
+  &__section--pages {
+    display: flex;
+    justify-content: center;
+  }
+  &__section--title {
+    .title__area {
+      &--link {
+        display: inline-block;
+        padding: 2rem;
+        text-transform: uppercase;
+        border: 0;
+        h1 {
+          font-weight: 400;
+          letter-spacing: 1px;
+          font-size: 1.5rem;
+          margin: 0;
+
+          transition: transform 0.2s;
+        }
+        &:hover {
+          h1 {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  &__item {
+    list-style: none;
+  }
+  &__link {
+        display: inline-block;
+        padding: 2rem;
+        text-transform: uppercase;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+        transition: background-color 0.2s;
+
+        &:hover {
+          background: #999;
+          color: white;
+        }
+  }
+
+}
+

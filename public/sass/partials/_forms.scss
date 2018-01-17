@@ -1,0 +1,23 @@
+.city {
+    max-width: 600px;
+    margin: 0 auto 5rem;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+
+    label {
+        display: block;
+        padding: 5px 0;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid #e6e6e6;
+
+        &#address {
+            flex-grow: 1;
+        }
+    }
+}
+

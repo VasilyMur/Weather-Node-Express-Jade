@@ -1,0 +1,30 @@
+mixin forecast()
+    .current
+        h2 Current Conditions in #{current.city}
+        .current__data--summary #{current.temp} ˚ #{current.summary}
+        .current__details
+            .current__details--param Wind #{current.wind}
+            .current__details--param Humidity #{current.humidity}
+            .current__details--param Clouds #{current.clouds}
+
+    .forecast
+        .forecast__data
+            span #{tomorrow.date}
+            .forecast__data--temp #{tomorrow.temp} ˚
+            .forecast__data--wind #{tomorrow.wind}
+            .forecast__data--summary #{tomorrow.summary}
+        .forecast__data
+            span #{three.date}
+            .forecast__data--temp #{three.temp} ˚ 
+            .forecast__data--wind #{three.wind}
+            .forecast__data--summary #{three.summary}
+        .forecast__data
+            span #{four.date}
+            .forecast__data--temp #{four.temp} ˚ 
+            .forecast__data--wind #{four.wind}
+            .forecast__data--summary #{four.summary}
+        .forecast__data
+            span #{five.date}
+            .forecast__data--temp #{five.temp} ˚
+            .forecast__data--wind #{five.wind}
+            .forecast__data--summary #{five.summary}
