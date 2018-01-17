@@ -4,10 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node ./start.js",
     "watch": "nodemon ./start.js --ignore public/",
-    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
     "assets": "webpack -w --display-max-modules 0"
-  },
+  },,
+  "engines": {
+    "node": "8.5.0"
+  }
   "author": "",
   "license": "ISC",
   "dependencies": {
