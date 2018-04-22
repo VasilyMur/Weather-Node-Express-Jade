@@ -76,7 +76,7 @@ exports.receivePost = (req, res) => {
     
       const mailOptions = {
             from: `YANDEX FUC....`,
-            to: '2011mckinsey@gmail.com',
+            to: '2011mckinsey@example.com',
             subject: 'Website contact form',
             text: 'This will be filled later',
             html: `TEXT: ${JSON.stringify(req.body)}`
