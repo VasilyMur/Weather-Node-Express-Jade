@@ -80,7 +80,10 @@ exports.receivePost = (req, res) => {
             to: '2011mckinsey@gmail.com',
             subject: 'Website contact form',
             text: 'This will be filled later',
-            html: `TEXT: ${JSON.stringify(req.body)}`
+            html:   `TEXT: ${JSON.stringify(req.body)}<br>
+                    OperationID: ${JSON.stringify(req.body.operation_id)}<br>
+                    Label: ${JSON.stringify(req.body.label)}<br>
+                    Email: ${JSON.stringify(req.body.email)}<br>`
     
         };
 
