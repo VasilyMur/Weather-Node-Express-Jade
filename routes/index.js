@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', weatherController.forecast);
 router.post('/', weatherController.search);
+router.get('/receive', weatherController.receive);
+router.post('/receive', weatherController.receivePost);
 
 
 

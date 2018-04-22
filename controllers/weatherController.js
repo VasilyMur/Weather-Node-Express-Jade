@@ -1,5 +1,8 @@
 const axios = require('axios');
 const moment = require('moment');
+const util = require('util');
+const fs = require('fs');
+const appendFile = util.promisify(fs.appendFile);
 
 
 // GET
@@ -48,3 +51,24 @@ exports.search = async (req, res) => {
     }
 
 };
+
+
+exports.receive = (req, res) => {
+    res.render('test');
+}
+
+exports.receivePost = async (req, res) => {
+
+
+    try {
+
+        const filePath = './public/uploads/data.txt';
+         const writeFile = await appendFile(filePath, JSON.stringify(req.body));
+         //res.render('fail', { title: 'Оплата не Прошла'});
+         res.status(200).send();
+      
+       } catch (e) {
+        res.render('error', {message:'Something went wrong'});
+       }
+      
+}
