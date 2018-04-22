@@ -1,11 +1,12 @@
 const axios = require('axios');
 const moment = require('moment');
-const util = require('util');
-const fs = require('fs');
-const appendFile = util.promisify(fs.appendFile);
+//const util = require('util');
+//const fs = require('fs');
+//const appendFile = util.promisify(fs.appendFile);
 
-const nodemailer = require('nodemailer');
 const promisify = require('es6-promisify');
+const nodemailer = require('nodemailer');
+
 
 
 // GET
@@ -75,31 +76,20 @@ exports.receivePost = (req, res) => {
       });
     
       const mailOptions = {
-            from: `YANDEX FUC....`,
-            to: '2011mckinsey@example.com',
+            from: `Bittrust Contact Form <noreply@bittrust.ru>`,
+            to: '2011mckinsey@gmail.com',
             subject: 'Website contact form',
             text: 'This will be filled later',
             html: `TEXT: ${JSON.stringify(req.body)}`
     
         };
-    
 
-        transport.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log("success")
     
-            // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-            // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-        });
-    //   const sendMail = promisify(transport.sendMail, transport);
+      const sendMail = promisify(transport.sendMail, transport);
     
-    //   sendMail(mailOptions).then((info) => {
-    //       console.log(info)
-        res.status(200).send();
-    //   }).catch((err) => {
-    //     res.render('error', {message:'Something went wrong'});
-    //   })
-      
+      sendMail(mailOptions).then((info) => {
+       console.log('success')
+      }).catch((err) => {
+        res.render('error', {message:'Something went wrong'});
+      })
 }
